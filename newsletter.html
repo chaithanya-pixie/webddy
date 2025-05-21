@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VirtuTrip - Newsletter</title>
+  <style>
+    /* General Styles */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f4;
+    }
+
+    /* Header */
+    header {
+        background: #1e3a8a;
+      color: white;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    header h1 {
+      margin: 0;
+    }
+
+    nav a {
+      color: white;
+      margin: 0 15px;
+      text-decoration: none;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    /* Newsletter Section */
+    .newsletter {
+      max-width: 600px;
+      margin: 3rem auto;
+      padding: 2rem;
+      background: white;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      text-align: center;
+    }
+
+    .newsletter h2 {
+      color: #0077b6;
+    }
+
+    .newsletter p {
+      color: #333;
+      font-size: 1.1rem;
+      margin-top: 1rem;
+    }
+
+    .newsletter label {
+      font-size: 1rem;
+      color: #333;
+      margin-top: 1rem;
+      display: block;
+    }
+
+    .newsletter input {
+      width: 100%;
+      padding: 10px;
+      margin-top: 0.5rem;
+      font-size: 1rem;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+
+    .newsletter button {
+      width: 100%;
+      padding: 10px;
+      background-color: #0077b6;
+      color: white;
+      font-size: 1.2rem;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      margin-top: 1rem;
+    }
+
+    .newsletter button:hover {
+      background-color: #005f86;
+    }
+
+    /*Footer */
+    footer {
+      text-align: center;
+      padding: 1rem;
+      background: #1e3a8a;
+      color: white;
+    }
+
+    footer p {
+      margin: 0;
+    }
+    /* Mobile Responsive Styles */
+    @media (max-width: 768px) {
+      .newsletter {
+        margin: 2rem auto;
+        padding: 1.5rem;
+      }
+
+      .newsletter h2 {
+        font-size: 1.8rem;
+      }
+
+      .newsletter p {
+        font-size: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>VirtuTrip</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="destinations.html">Destinations</a>
+      <a href="trip-planner.html">Trip Planner</a>
+      <a href="cultural-guides.html">Cultural Guides</a>
+      <a href="login.html">Login</a>
+      <a href="about.html">About Us</a>
+      <a href="contact.html">Contact Us</a>
+      <a href="testimonials.html">Feedbacks</a>
+      <a href="blog.html">Blog</a>
+      <a href="newsletter.html">Newsletter</a>
+    </nav>
+  </header>
+
+  <section class="newsletter">
+    <h2>Sign Up for Our Newsletter</h2>
+    <p>Get the latest updates, travel tips, and exclusive offers delivered straight to your inbox!</p>
+    <form id="newsletterForm" action="#" method="POST" onsubmit="return validateForm()">
+      <label for="email">Email Address:</label>
+      <input type="email" id="email" name="email" required>
+      <button type="submit">Subscribe</button>
+    </form>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 VirtuTrip</p>
+  </footer>
+
+  <script>
+    // JavaScript for Form Validation
+    function validateForm() {
+      const email = document.getElementById('email').value;
+      
+      // Simple email validation
+      const emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
+      if (!emailPattern.test(email)) {
+        alert('Please enter a valid email address.');
+        return false;
+      }
+
+      // If valid, you can proceed with form submission logic (e.g., sending to a server)
+      alert('Thank you for subscribing!');
+      document.getElementById('newsletterForm').reset();
+      return false; // Prevent form from submitting in this demo scenario
+    }
+  </script>
+
+</body>
+</html>
